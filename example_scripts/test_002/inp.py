@@ -66,7 +66,9 @@ label2='FCHL-ML-predicted ($N_{train}$='+ str(N_train) +')'
 label=[label1, label2]
 qmlspectrum.plot_stem_smooth(lam,Int_TDDFT,Int_pred,label,'trainingmolecule_spectrum_ML_TDDFT.png')
 
-iquery=6406
+
+
+iquery=5000
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
 
 Int_TDDFT=Int_lam[indices[iquery],:]
