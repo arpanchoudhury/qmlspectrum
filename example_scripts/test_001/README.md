@@ -18,8 +18,8 @@ This example will take a few minutes to complete and will generate four files
 Note that `.npy` files are in binary format created by `numpy`. These files can be reused in a separate calculation by setting the following 4 variables to be `True` in `inp.py`  
 
 ```
-read_X=False         
-read_P=False         
+read_X = False         
+read_P = False         
 load_indices = False
 load_K = False
 ```
