@@ -10,6 +10,5 @@
 `qmlspectrum` can be installed using the Python package manager `pip`:
 
 ```
-pip3 install qmlspectrum
+pip3 install qmlspectrum --user
 ```
-
