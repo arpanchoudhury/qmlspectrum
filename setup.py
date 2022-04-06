@@ -4,6 +4,7 @@ from setuptools import setup, find_packages
 HERE = pathlib.Path(__file__).parent
 
 PACKAGE_NAME = 'qmlspectrum'
+VERSION = '22.04'
 AUTHOR = 'Raghunathan Ramakrishnan'
 AUTHOR_EMAIL = 'raghu.rama.chem@gmail.com'
 URL = 'https://github.com/raghurama123/qmlspectrum'
@@ -12,12 +13,13 @@ DESCRIPTION = 'A mini-package for quantum machine learning of full electronic sp
 LONG_DESCRIPTION = (HERE / "README.md").read_text()
 LONG_DESC_TYPE = "text/markdown"
 INSTALL_REQUIRES = [
-      'numpy'
-      'scipy'
+      'numpy',
+      'scipy',
       'matplotlib'
 ]
 
 setup(name=PACKAGE_NAME,
+      version=VERSION,
       author=AUTHOR,
       author_email=AUTHOR_EMAIL,
       url=URL,
