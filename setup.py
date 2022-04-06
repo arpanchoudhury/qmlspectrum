@@ -4,12 +4,12 @@ from setuptools import setup, find_packages
 HERE = pathlib.Path(__file__).parent
 
 PACKAGE_NAME = 'qmlspectrum'
-VERSION = '22.04'
+VERSION = '22.04.02'
 AUTHOR = 'Raghunathan Ramakrishnan'
 AUTHOR_EMAIL = 'raghu.rama.chem@gmail.com'
 URL = 'https://github.com/raghurama123/qmlspectrum'
 LICENSE = 'MIT License'
-DESCRIPTION = 'A mini-package for quantum machine learning of full electronic spectrum'
+DESCRIPTION = 'A test-suite that uses the package qml for modeling continuous spectral modeling'
 LONG_DESCRIPTION = (HERE / "README.md").read_text()
 LONG_DESC_TYPE = "text/markdown"
 INSTALL_REQUIRES = [
