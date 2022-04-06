@@ -55,7 +55,7 @@ alpha=qmlspectrum.linalg_solve(N_bin,K,P,'train_spec_00100.txt','coeffs_00100.tx
 
 #=== prediction
 
-iquery=0 #6406
+iquery=0
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
 
 Int_TDDFT=Int_lam[indices[iquery],:]
@@ -64,7 +64,18 @@ Int_TDDFT=Int_lam[indices[iquery],:]
 label1='TDDFT'
 label2='FCHL-ML-predicted ($N_{train}$='+ str(N_train) +')'
 label=[label1, label2]
-qmlspectrum.plot_stem_smooth(lam,Int_TDDFT,Int_pred,label,'spectrum_ML_TDDFT.png')
+qmlspectrum.plot_stem_smooth(lam,Int_TDDFT,Int_pred,label,'trainingmolecule_spectrum_ML_TDDFT.png')
+
+iquery=6406
+Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
+
+Int_TDDFT=Int_lam[indices[iquery],:]
+
+# Plot a TDDFT stick spectrum along with a smooth ML predicted spectrum
+label1='TDDFT'
+label2='FCHL-ML-predicted ($N_{train}$='+ str(N_train) +')'
+label=[label1, label2]
+qmlspectrum.plot_stem_smooth(lam,Int_TDDFT,Int_pred,label,'newmolecule_spectrum_ML_TDDFT.png')
 
 
 #=== Other options for plotting
