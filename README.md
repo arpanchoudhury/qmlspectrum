@@ -13,10 +13,3 @@
 pip3 install qmlspectrum
 ```
 
-You can also install my downloading the contents from github
-
-```
-git clone https://github.com/raghurama123/qmlspectrum.git
-cd qmlspectrum
-pip3 install .
-```
