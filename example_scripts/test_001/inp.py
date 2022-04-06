@@ -1,7 +1,4 @@
-import numpy as np
-import qml
 import qmlspectrum
-import random
 
 #== Inputs
 
@@ -31,8 +28,8 @@ read_P=False            # If true, binned properties will be loaded from 'file_P
 file_P='def2SVP_spec_128bins.npy'
 
 # Shuffling
-load_indices = False
-file_indices = 'shuffle_index.dat'
+load_indices=False
+file_indices='shuffle_index.dat'
 
 #=== End of General Inputs
 
@@ -48,10 +45,10 @@ indices=qmlspectrum.shuffle(load_indices, file_indices, N_mol)
 #=== Training
 # Generate the kernel matrix, and collect property of training molecules
 N_train=100
-load_K = False
+load_K=False
 file_kernel='Kernel_00100.dat.npy'
 
-K,P = qmlspectrum.prepare_trainingdata(N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance)
+K,P = qmlspectrum.prepare_trainingdata(N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance,max_size)
 
 # solve KRR equations
 alpha=qmlspectrum.linalg_solve(N_bin,K,P,'train_spec_00100.txt','coeffs_00100.txt')

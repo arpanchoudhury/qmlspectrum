@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 def shuffle(load_indices, file_indices, N_mol):
 

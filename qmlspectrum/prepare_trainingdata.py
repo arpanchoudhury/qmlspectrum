@@ -1,7 +1,7 @@
 import numpy as np
 import qml
 
-def prepare_trainingdata(N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance):
+def prepare_trainingdata(N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance,max_size):
 
     N_bin=Int_lam.shape[1]
 

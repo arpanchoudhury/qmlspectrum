@@ -28,5 +28,5 @@ def qml_fchl_rep(geom_path, read_X, file_X, cut_distance):
         np.save(file_X, X)
         print('FCHL representation is stored in ', file_X)
 
-    N_mol = X.shape[0]
+    N_mol = len(X)
     return N_mol, max_size, X

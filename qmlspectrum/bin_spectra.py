@@ -1,5 +1,6 @@
 import numpy as np
 import qmlspectrum
+import pandas as pd
 '''
 A module containing functions for various types of binning.
 '''
