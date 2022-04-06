@@ -1,4 +1,4 @@
-Train an FCHL-KRR machine with 100 examples from the bigQM7w dataset (UFF geometries and wB97XD/def2SVPD TDDFT spectra) and predict the electronic spectrum of a query molecule
+Train an FCHL-KRR machine with 100 examples from the bigQM7ω dataset (UFF geometries and ωB97XD/def2SVPD TDDFT spectra) and predict the electronic spectrum of a query molecule.
 
 To run this example, install `qmlspectrum` via `pip3 install qmlspectrum` and the dependencies
 
@@ -30,4 +30,6 @@ In the input script, `iquery=0` indicates that we want to predict the spectrum o
 
 If you want to try another example for query, you can check the _absolute_ indices of the bigQM7w molecules in the file `shuffle_index.dat`
 
+## Additional details
 
+The electronic spectra in the bigQM7ω dataset are calculated at the TDωB97XD/def2SVPD@ωB97XD/def2SVP level (TDωB97XD/def2SVPD single point on ωB97XD/def2SVP minimum energy geometries) for all 12880 molecules. You can data-mine on this dataset through the MolDis platform [https://moldis.tifrh.res.in/db/dbbigqm7wdef2svp](https://moldis.tifrh.res.in/db/dbbigqm7wdef2svp).
