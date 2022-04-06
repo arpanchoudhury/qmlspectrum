@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: qmlspectrum
+Version: 22.4
+Summary: A mini-package for quantum machine learning of full electronic spectrum
+Home-page: https://github.com/raghurama123/qmlspectrum
+Author: Raghunathan Ramakrishnan
+Author-email: raghu.rama.chem@gmail.com
+License: MIT License
+Description-Content-Type: text/markdown
+Description: # QMLfullspec
+Platform: UNKNOWN
