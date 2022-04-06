@@ -24,8 +24,9 @@ load_indices = False
 load_K = False
 ```
 
-
 In the input script, `iquery=0` indicates that we want to predict the spectrum of the first molecule after shuffling. This molecule is a part of the trainingset, so we will be able to predict its spectrum very well as can be seen by the output spectrum shown below.
+
+![image](spectrum_ML_TDDFT.png)
 
 If you want to try another example for query, you can check the _absolute_ indices of the bigQM7w molecules in the file `shuffle_index.dat`
 
