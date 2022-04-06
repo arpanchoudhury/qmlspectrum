@@ -22,7 +22,11 @@ load_indices = True
 load_K = True
 ```
 
+## Training molecule
+
 ![image](trainingmolecule_spectrum_ML_TDDFT.png)
+
+## Out of sample molecule
 
 ![image](newmolecule_spectrum_ML_TDDFT.png)
 
