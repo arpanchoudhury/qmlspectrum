@@ -1,4 +1,4 @@
-Same as `test_002` but after prediction confidence score in prediction (in %) is calculated.   
+Same as `test_002` but after prediction confidence score in prediction (in %) is calculated. We will also remove the lines for making the plots.   
 
 These are the changes in the `inp.py` 
 
