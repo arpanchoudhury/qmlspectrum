@@ -23,5 +23,21 @@ If you are using the program and the bigQM7ω dataset distributed here, please c
 
 [Ref-1] [_Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma_](https://arxiv.org/abs/2110.11798)                
 Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)     
+```
+@article{kayastha2021quantum,
+  title={Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma},
+  author={Kayastha, Prakriti and Chakraborty, Sabyasachi and Ramakrishnan, Raghunathan},
+  journal={arXiv preprint arXiv:2110.11798},
+  url={https://doi.org/10.48550/arXiv.2110.11798},
+  year={2022}
+}
+```
 
-[Ref-2] [_AS Christensen, FA Faber, B Huang, LA Bratholm, A Tkatchenko, KR Muller, OA von Lilienfeld (2017) "QML: A Python Toolkit for Quantum Machine Learning, https://github.com/qmlcode/qml"_](https://github.com/qmlcode/qml)     
+[Ref-2] [_AS Christensen, FA Faber, B Huang, LA Bratholm, A Tkatchenko, KR Muller, OA von Lilienfeld (2017) "QML: A Python Toolkit for Quantum Machine Learning, https://github.com/qmlcode/qml"_](https://github.com/qmlcode/qml)  
+```
+@misc{christensenqml,
+  title={QML: A Python Toolkit for Quantum Machine Learning, 2019},
+  author={Christensen, Anders S and Bratholm, Lars A and Amabilino, Silvia and Kromann, Jimmy C and Faber, Felix A and Huang, Bing and Tkatchenko, A and von Lilienfeld, OA}
+  url={https://www.qmlcode.org/}
+}
+```
