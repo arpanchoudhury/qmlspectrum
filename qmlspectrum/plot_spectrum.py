@@ -35,7 +35,7 @@ def plot_stem_smooth(lam,Int1,Int2,label,filename):
         lam_smooth[i]=min(lam)+i*dx+dx/2
     f=interpolate.interp1d(lam, Int2, kind='cubic')
     Int_smooth=f(lam_smooth)
-    plt.stem(lam, Int1, label=label1, linewidth=1.0, linefmt='r-', markerfmt=' ')
+    plt.stem(lam, Int1, label=label1, linefmt='r-', markerfmt=' ')
     plt.plot(lam_smooth, Int_smooth, label=label2, linewidth=1.0, color='blue')
     plt.legend()
     plt.xlabel('Wavelength (nm)', fontsize = 15)

@@ -3,7 +3,7 @@ import qml
 
 def prepare_trainingdata(N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance,max_size):
 
-    N_bin=Int_lam.shape[1]
+    N_bin=len(Int_lam)
 
     K=np.zeros([N_train,N_train],dtype=float)
     if load_K:
