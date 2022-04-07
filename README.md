@@ -18,6 +18,21 @@ We are developing new content through collaborative efforts which will soon be c
 pip3 install qmlspectrum --user
 ```
 
+## Re-installation
+
+You can check the recent subversion number at [https://pypi.org/project/qmlspectrum/#description](https://pypi.org/project/qmlspectrum/#description) and compare your version using
+
+```
+pip3 show qmlspectrum 
+```
+
+To update your version, you can uninstall and re-install 
+
+```
+pip3 uninstall qmlspectrum 
+pip3 install qmlspectrum --user
+```
+
 ## Dependencies
 
 * `matplotlib`, `pandas`, `scipy`, `numpy`, and `qml` 
