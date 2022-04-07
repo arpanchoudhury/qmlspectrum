@@ -29,6 +29,10 @@ pip3 install qmlspectrum --user
 * Debashree Ghosh   
 * Raghunathan Ramakrishnan    
 
+## Development
+
+This test-suite is developed by Raghunathan Ramakrishnan and maintained at [https://github.com/raghurama123/qmlspectrum/](https://github.com/raghurama123/qmlspectrum/)  
+
 ## Citation
 
 If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following article and the QML code.        
