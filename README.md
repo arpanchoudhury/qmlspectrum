@@ -6,7 +6,7 @@
 
 `qmlspectrum` is a small test-suite that uses [qml](https://www.qmlcode.org/) package for modeling spectra as continuous functions. In this repository, we also distribute suitable datasets suitable for spectral modeling. Example input scripts collected in `example_scripts` show how to use the `qmlspectrum` test-suite.
 
-## Project status
+## Status
 
 We are developing new content through collaborative efforts which will soon be collected here. 
 
