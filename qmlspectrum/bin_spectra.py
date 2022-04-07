@@ -27,9 +27,9 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
             lambda_min.append( (i_bin)*dlambda )
             lambda_max.append( (i_bin+1)*dlambda )
             lam.append( (i_bin+1.0/2.0)*dlambda )
-        Int_lam=[]
         N_file=len(spec_files)
         i_file=0
+        Int_lam=np.zeros([N_file,N_bin])
         for spec_csv in spec_files:
             if np.mod(i_file, 100) == 0:
                 print(i_file,' out of ', N_file, ' done')
@@ -41,8 +41,7 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
                 scr=f[(wavelength > lambda_min[i_bin] ) & (wavelength <= lambda_max[i_bin])]
                 sum_f[i_bin]=np.sum( scr )
             i_file=i_file+1
-            Int_lam.append(sum_f)
-        Int_lam=np.array(Int_lam)
+            Int_lam[ifile,i_bin]=sum_f
         np.save(file_P, Int_lam)
         print('data saved in ', file_P)
 

@@ -1,4 +1,5 @@
 import qmlspectrum
+import numpy as np
 
 #== Inputs
 
@@ -39,6 +40,9 @@ N_mol, max_size, X = qmlspectrum.qml_fchl_rep(geom_path, read_X, file_X, cut_dis
 #=== Bin spectra for all molecules
 lam,Int_lam=qmlspectrum.bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_max, N_bin)
 
+for i_mol in range(N_mol):
+    Int_lam[i_mol,:]=Int_lam[i_mol,:]/np.sum(Int_lam[i_mol,:])
+
 #=== Shuffle
 indices=qmlspectrum.shuffle(load_indices, file_indices, N_mol)
 
@@ -57,32 +61,23 @@ alpha=qmlspectrum.linalg_solve(N_bin,K,P,'train_spec_00100.txt','coeffs_00100.tx
 
 iquery=0
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
-
 Int_TDDFT=Int_lam[indices[iquery],:]
-
-# Plot a TDDFT stick spectrum along with a smooth ML predicted spectrum
-label1='TDDFT'
-label2='FCHL-ML-predicted ($N_{train}$='+ str(N_train) +')'
-label=[label1, label2]
-qmlspectrum.plot_stem_smooth(lam,Int_TDDFT,Int_pred,label,'trainingmolecule_spectrum_ML_TDDFT.png')
-
-
+phi=qmlspectrum.confidence_score(Int_pred, Int_TDDFT)
+print('Confidence score for entry ', iquery,'= ',phi, ' %')
 
 iquery=5000
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
-
 Int_TDDFT=Int_lam[indices[iquery],:]
+phi=qmlspectrum.confidence_score(Int_pred, Int_TDDFT)
+print('Confidence score for entry ', iquery,'= ',phi, ' %')
 
-# Plot a TDDFT stick spectrum along with a smooth ML predicted spectrum
-label1='TDDFT'
-label2='FCHL-ML-predicted ($N_{train}$='+ str(N_train) +')'
-label=[label1, label2]
-qmlspectrum.plot_stem_smooth(lam,Int_TDDFT,Int_pred,label,'newmolecule_spectrum_ML_TDDFT.png')
+#out_of_sample_score=0
+#for iquery in range(100,200):
+#    Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
+#    Int_TDDFT=Int_lam[indices[iquery],:]
+#    phi=qmlspectrum.confidence_score(Int_pred, Int_TDDFT)
+#    out_of_sample_score=out_of_sample_score+phi
+#    print('Confidence score for entry ', iquery,'= ',phi, ' %')
 
+#print('Mean of confidence scores for entries between 100 and 200 is', out_of_sample_score/100, ' %' )
 
-#=== Other options for plotting
-# Plot a stick spectrum
-# qmlspectrum.plot_stem(lam,Int_TDDFT,'TDDFT','spectrum_TDDFT.png')
-
-# Plot a smooth spectrum
-# qmlspectrum.plot_smooth(lam,Int_TDDFT,'TDDFT','spectrum_TDDFT_smooth.png')

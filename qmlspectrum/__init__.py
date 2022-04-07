@@ -9,3 +9,4 @@ from .plot_spectrum import plot_stem_smooth
 from .predict import predict
 from .shuffle import shuffle
 from .prepare_trainingdata import prepare_trainingdata
+from .scores import confidence_score

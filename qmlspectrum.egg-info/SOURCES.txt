@@ -9,6 +9,7 @@ qmlspectrum/prepare_trainingdata.py
 qmlspectrum/qml_representation.py
 qmlspectrum/qml_utils.py
 qmlspectrum/read_files.py
+qmlspectrum/scores.py
 qmlspectrum/shuffle.py
 qmlspectrum.egg-info/PKG-INFO
 qmlspectrum.egg-info/SOURCES.txt
