@@ -25,7 +25,7 @@ pip3 install qmlspectrum --user
 
 ## References
 
-If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following article and the QML code.        
+If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following references.
 
 #### 1. bigQM7ω dataset and full-spectrum modeling
 [_Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma_](https://arxiv.org/abs/2110.11798)                
