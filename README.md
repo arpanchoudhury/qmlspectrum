@@ -20,7 +20,7 @@ pip3 install qmlspectrum --user
 
 ## Dependencies
 
-* `matplitlib`, `pandas`, `scipy`, `numpy`, and `qml` 
+* `matplotlib`, `pandas`, `scipy`, `numpy`, and `qml` 
 * All of these can be installed using the Python package manager `pip/pip3`
 
 ## Contributors 
