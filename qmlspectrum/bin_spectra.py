@@ -42,6 +42,7 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
                 sum_f[i_bin]=np.sum( scr )
             i_file=i_file+1
             Int_lam.append(sum_f)
+        Int_lam=np.array(Int_lam)
         np.save(file_P, Int_lam)
         print('data saved in ', file_P)
 

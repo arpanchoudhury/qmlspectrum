@@ -12,7 +12,7 @@ def shuffle(load_indices, file_indices, N_mol):
             indices.append(int(string))
         f.close()
     else:
-        indices=random.sample(range(0,N_mol), N_mol)
+        indices=list( random.sample(range(0,N_mol), N_mol) )
         f = open(file_indices, 'w')
         for i_mol in range(N_mol):
             f.write("%06d"%(indices[i_mol])+'\n')
