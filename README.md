@@ -67,14 +67,15 @@ Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)
 }
 ```
 
-## Contributors 
-
-* Prakriti Kayastha    
-* Arpan Choudhury     
-* Sabysachi Chakraborty     
-* Debashree Ghosh   
-* Raghunathan Ramakrishnan    
-
 ## Development
 
 This test-suite is developed by Raghunathan Ramakrishnan and maintained at [https://github.com/raghurama123/qmlspectrum/](https://github.com/raghurama123/qmlspectrum/) and [https://pypi.org/project/qmlspectrum/](https://pypi.org/project/qmlspectrum/)   
+
+## Contributions from
+
+* Prakriti Kayastha    
+* Sabysachi Chakraborty     
+* Arpan Choudhury     
+* Debashree Ghosh   
+
+
