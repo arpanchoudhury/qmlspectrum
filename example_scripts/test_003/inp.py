@@ -71,13 +71,3 @@ Int_TDDFT=Int_lam[indices[iquery],:]
 phi=qmlspectrum.confidence_score(Int_pred, Int_TDDFT)
 print('Confidence score for entry ', iquery,'= ',phi, ' %')
 
-#out_of_sample_score=0
-#for iquery in range(100,200):
-#    Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
-#    Int_TDDFT=Int_lam[indices[iquery],:]
-#    phi=qmlspectrum.confidence_score(Int_pred, Int_TDDFT)
-#    out_of_sample_score=out_of_sample_score+phi
-#    print('Confidence score for entry ', iquery,'= ',phi, ' %')
-
-#print('Mean of confidence scores for entries between 100 and 200 is', out_of_sample_score/100, ' %' )
-
