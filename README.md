@@ -1,7 +1,7 @@
-# qmlspectrum
+# qmlspectrum ![:UnderDevelopment](https://img.shields.io/badge/UnderDevelopment-red.svg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python3](https://img.shields.io/badge/Language-Python3-red.svg)](https://www.python.org/download/releases/3.0/)
+[![Python3](https://img.shields.io/badge/Language-Python3-blue.svg)](https://www.python.org/download/releases/3.0/)
 ![Domain: Chemistry](https://img.shields.io/badge/Domain-Chemistry-green.svg)
 
 `qmlspectrum` is a small test-suite that uses [qml](https://www.qmlcode.org/) package for modeling spectra as continuous functions. In this repository, we also distribute suitable datasets suitable for spectral modeling. Example input scripts collected in `example_scripts` show how to use the `qmlspectrum` test-suite.
@@ -18,28 +18,31 @@ We are developing new content through collaborative efforts which will soon be c
 pip3 install qmlspectrum --user
 ```
 
+## Re-installation
+
+You can check the recent subversion number at [https://pypi.org/project/qmlspectrum/#description](https://pypi.org/project/qmlspectrum/#description) and compare your version using
+
+```
+pip3 show qmlspectrum 
+```
+
+To update your version, you can uninstall and re-install 
+
+```
+pip3 uninstall qmlspectrum 
+pip3 install qmlspectrum --user
+```
+
 ## Dependencies
 
-* `matplitlib`, `pandas`, `scipy`, `numpy`, and `qml` 
+* `matplotlib`, `pandas`, `scipy`, `numpy`, and `qml` 
 * All of these can be installed using the Python package manager `pip/pip3`
 
-## Contributors 
+## References
 
-* Prakriti Kayastha    
-* Arpan Chaudury     
-* Sabysachi Chakraborty     
-* Debashree Ghosh   
-* Raghunathan Ramakrishnan    
+If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following references.
 
-## Development
-
-This test-suite is developed by Raghunathan Ramakrishnan and maintained at [https://github.com/raghurama123/qmlspectrum/](https://github.com/raghurama123/qmlspectrum/) and [https://pypi.org/project/qmlspectrum/](https://pypi.org/project/qmlspectrum/)   
-
-## Citation
-
-If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following article and the QML code.        
-
-#### bigQM7ω dataset and full-spectrum modeling
+#### 1. bigQM7ω dataset and full-spectrum modeling
 [_Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma_](https://arxiv.org/abs/2110.11798)                
 Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)     
 ```
@@ -53,7 +56,7 @@ Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)
 }
 ```
 
-#### QML, A Python Toolkit for Quantum Machine Learning
+#### 2. QML, A Python Toolkit for Quantum Machine Learning
 [_AS Christensen, FA Faber, B Huang, LA Bratholm, A Tkatchenko, KR Muller, OA von Lilienfeld (2017) "QML: A Python Toolkit for Quantum Machine Learning, https://github.com/qmlcode/qml"_](https://github.com/qmlcode/qml)  
 ```
 @misc{christensenqml,
@@ -63,3 +66,16 @@ Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)
   url={https://www.qmlcode.org/}
 }
 ```
+
+## Development
+
+This test-suite is developed by Raghunathan Ramakrishnan and maintained at [https://github.com/raghurama123/qmlspectrum/](https://github.com/raghurama123/qmlspectrum/) and [https://pypi.org/project/qmlspectrum/](https://pypi.org/project/qmlspectrum/)   
+
+## Contributions from
+
+* Prakriti Kayastha    
+* Sabysachi Chakraborty     
+* Arpan Choudhury     
+* Debashree Ghosh   
+
+
