@@ -55,7 +55,7 @@ Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)
 ## Contributors 
 
 * Prakriti Kayastha    
-* Arpan Chaudury     
+* Arpan Choudhury     
 * Sabysachi Chakraborty     
 * Debashree Ghosh   
 * Raghunathan Ramakrishnan    
