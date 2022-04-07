@@ -39,11 +39,12 @@ This test-suite is developed by Raghunathan Ramakrishnan and maintained at [http
 If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following article and the QML code.        
 
 #### bigQM7ω dataset and full-spectrum modeling
-[Ref-1] [_Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma_](https://arxiv.org/abs/2110.11798)                
+[_Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma_](https://arxiv.org/abs/2110.11798)                
 Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)     
 ```
 @article{kayastha2022quantum,
-  title={Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma},
+  title={Quantum Machine Learning Transition Probabilities in Electronic Excitation 
+  Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma},
   author={Kayastha, Prakriti and Chakraborty, Sabyasachi and Ramakrishnan, Raghunathan},
   journal={arXiv preprint arXiv:2110.11798},
   url={https://doi.org/10.48550/arXiv.2110.11798},
@@ -52,11 +53,12 @@ Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)
 ```
 
 #### QML, A Python Toolkit for Quantum Machine Learning
-[Ref-2] [_AS Christensen, FA Faber, B Huang, LA Bratholm, A Tkatchenko, KR Muller, OA von Lilienfeld (2017) "QML: A Python Toolkit for Quantum Machine Learning, https://github.com/qmlcode/qml"_](https://github.com/qmlcode/qml)  
+[_AS Christensen, FA Faber, B Huang, LA Bratholm, A Tkatchenko, KR Muller, OA von Lilienfeld (2017) "QML: A Python Toolkit for Quantum Machine Learning, https://github.com/qmlcode/qml"_](https://github.com/qmlcode/qml)  
 ```
 @misc{christensenqml,
   title={QML: A Python Toolkit for Quantum Machine Learning, 2019},
-  author={Christensen, Anders S and Bratholm, Lars A and Amabilino, Silvia and Kromann, Jimmy C and Faber, Felix A and Huang, Bing and Tkatchenko, A and von Lilienfeld, OA}
+  author={Christensen, Anders S and Bratholm, Lars A and Amabilino, Silvia and Kromann, Jimmy C 
+  and Faber, Felix A and Huang, Bing and Tkatchenko, A and von Lilienfeld, OA}
   url={https://www.qmlcode.org/}
 }
 ```
