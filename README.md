@@ -23,18 +23,6 @@ pip3 install qmlspectrum --user
 * `matplotlib`, `pandas`, `scipy`, `numpy`, and `qml` 
 * All of these can be installed using the Python package manager `pip/pip3`
 
-## Contributors 
-
-* Prakriti Kayastha    
-* Arpan Chaudury     
-* Sabysachi Chakraborty     
-* Debashree Ghosh   
-* Raghunathan Ramakrishnan    
-
-## Development
-
-This test-suite is developed by Raghunathan Ramakrishnan and maintained at [https://github.com/raghurama123/qmlspectrum/](https://github.com/raghurama123/qmlspectrum/) and [https://pypi.org/project/qmlspectrum/](https://pypi.org/project/qmlspectrum/)   
-
 ## Citation
 
 If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following article and the QML code.        
@@ -63,3 +51,15 @@ Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)
   url={https://www.qmlcode.org/}
 }
 ```
+
+## Contributors 
+
+* Prakriti Kayastha    
+* Arpan Chaudury     
+* Sabysachi Chakraborty     
+* Debashree Ghosh   
+* Raghunathan Ramakrishnan    
+
+## Development
+
+This test-suite is developed by Raghunathan Ramakrishnan and maintained at [https://github.com/raghurama123/qmlspectrum/](https://github.com/raghurama123/qmlspectrum/) and [https://pypi.org/project/qmlspectrum/](https://pypi.org/project/qmlspectrum/)   
