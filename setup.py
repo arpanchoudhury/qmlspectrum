@@ -4,13 +4,13 @@ from setuptools import setup, find_packages
 HERE = pathlib.Path(__file__).parent
 
 PACKAGE_NAME = 'qmlspectrum'
-VERSION = '22.04.04'
+VERSION = '22.04.05'
 AUTHOR = 'Raghunathan Ramakrishnan'
 AUTHOR_EMAIL = 'raghu.rama.chem@gmail.com'
 URL = 'https://github.com/raghurama123/qmlspectrum'
 LICENSE = 'MIT License'
 DESCRIPTION = 'A test-suite that uses the package qml for modeling continuous spectra'
-LONG_DESCRIPTION = 'see README.md'
+LONG_DESCRIPTION = 'See [https://github.com/raghurama123/qmlspectrum](https://github.com/raghurama123/qmlspectrum) for documentation, datasets and example python scripts to use this test-suite'
 LONG_DESC_TYPE = "text/markdown"
 INSTALL_REQUIRES = [ 'qml', 'pandas', 'numpy', 'scipy', 'matplotlib' ]
 
