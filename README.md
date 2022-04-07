@@ -32,7 +32,7 @@ pip3 install qmlspectrum --user
 
 ## Development
 
-This test-suite is developed by Raghunathan Ramakrishnan and maintained at [https://github.com/raghurama123/qmlspectrum/](https://github.com/raghurama123/qmlspectrum/)  
+This test-suite is developed by Raghunathan Ramakrishnan and maintained at [https://github.com/raghurama123/qmlspectrum/](https://github.com/raghurama123/qmlspectrum/) and [https://pypi.org/project/qmlspectrum/](https://pypi.org/project/qmlspectrum/)   
 
 ## Citation
 
