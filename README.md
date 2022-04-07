@@ -27,7 +27,7 @@ pip3 install qmlspectrum --user
 
 If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following article and the QML code.        
 
-#### bigQM7ω dataset and full-spectrum modeling
+#### 1. bigQM7ω dataset and full-spectrum modeling
 [_Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma_](https://arxiv.org/abs/2110.11798)                
 Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)     
 ```
@@ -41,7 +41,7 @@ Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)
 }
 ```
 
-#### QML, A Python Toolkit for Quantum Machine Learning
+#### 2. QML, A Python Toolkit for Quantum Machine Learning
 [_AS Christensen, FA Faber, B Huang, LA Bratholm, A Tkatchenko, KR Muller, OA von Lilienfeld (2017) "QML: A Python Toolkit for Quantum Machine Learning, https://github.com/qmlcode/qml"_](https://github.com/qmlcode/qml)  
 ```
 @misc{christensenqml,
