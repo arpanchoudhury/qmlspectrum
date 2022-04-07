@@ -1,4 +1,4 @@
-# qmlspectrum ![:DevelopmentalVersion](https://img.shields.io/badge/DDevelopmentalVersion-orange.svg)
+# qmlspectrum ![:DevelopmentalVersion](https://img.shields.io/badge/DDevelopmentalVersion-red.svg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python3](https://img.shields.io/badge/Language-Python3-blue.svg)](https://www.python.org/download/releases/3.0/)
