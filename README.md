@@ -23,7 +23,7 @@ pip3 install qmlspectrum --user
 * `matplotlib`, `pandas`, `scipy`, `numpy`, and `qml` 
 * All of these can be installed using the Python package manager `pip/pip3`
 
-## Citation
+## References
 
 If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following article and the QML code.        
 
