@@ -1,4 +1,4 @@
-Same as `test_003` but we will predict the spectrum of 100 out-of-sample molecules, calculate the confidence score for prediction, and also find the mean confidence score for out-of-sample prediction. 
+Same as `test_003a` but we will predict the spectrum of 100 out-of-sample molecules, calculate the confidence score for prediction, and also find the mean confidence score for out-of-sample prediction. 
 
 For the shuffles considered we get the following results.
 
