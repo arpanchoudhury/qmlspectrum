@@ -34,16 +34,16 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
             if np.mod(i_file, 100) == 0:
                 print(i_file,' out of ', N_file, ' done')
             spec_data=pd.read_csv(spec_path+'/'+spec_csv, names=['wavelength_nm', 'osc_strength'])
-            wavelength=spec_data['wavelength_nm']
-            f=spec_data['osc_strength']
-            sum_f=np.zeros(N_bin)
+            wavelength=np.array(spec_data['wavelength_nm'])
+            f=np.array(spec_data['osc_strength'])
             for i_bin in range(N_bin):
-                scr=f[(wavelength > lambda_min[i_bin] ) & (wavelength <= lambda_max[i_bin])]
-                sum_f[i_bin]=np.sum( scr )
+                sum_f=0.0
+                for i_state in range(f.shape[0]):
+                    if wavelength[i_state] > lambda_min[i_bin] and wavelength[i_state] <= lambda_max[i_bin]:
+                        sum_f=sum_f+f[i_state]
+                Int_lam[i_file,i_bin]=sum_f
             i_file=i_file+1
-            Int_lam[ifile,i_bin]=sum_f
         np.save(file_P, Int_lam)
         print('data saved in ', file_P)
 
     return lam, Int_lam
-
