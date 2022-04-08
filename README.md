@@ -1,4 +1,6 @@
-# qmlspectrum ![:UnderDevelopment](https://img.shields.io/badge/UnderDevelopment-red.svg)
+# qmlspectrum 
+![:o](https://img.shields.io/badge/o-black.svg)![:o](https://img.shields.io/badge/o-yellow.svg)![:o](https://img.shields.io/badge/o-black.svg)![:o](https://img.shields.io/badge/o-yellow.svg)![:o](https://img.shields.io/badge/o-black.svg)![:o](https://img.shields.io/badge/o-yellow.svg)![:EXPERIMENTAL](https://img.shields.io/badge/EXPERIMENTAL-red.svg)![:o](https://img.shields.io/badge/o-yellow.svg)![:o](https://img.shields.io/badge/o-black.svg)![:o](https://img.shields.io/badge/o-yellow.svg)![:o](https://img.shields.io/badge/o-black.svg)![:o](https://img.shields.io/badge/o-yellow.svg)![:o](https://img.shields.io/badge/o-black.svg)
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python3](https://img.shields.io/badge/Language-Python3-blue.svg)](https://www.python.org/download/releases/3.0/)
