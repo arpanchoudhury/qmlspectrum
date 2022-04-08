@@ -24,11 +24,11 @@ wavelength_min=0.0
 read_X=False            # If true, descriptors will be loaded from 'file_X', if false will be calculated and stored in this file
 file_X='FCHL_UFF.npy'
 
-read_P=True            # If true, binned properties will be loaded from 'file_P', if false will be calculated and stored in this file
+read_P=False            # If true, binned properties will be loaded from 'file_P', if false will be calculated and stored in this file
 file_P='def2SVP_spec_128bins.npy'
 
 # Shuffling
-load_indices=False
+load_indices=True
 file_indices='shuffle_index.dat'
 
 #=== End of General Inputs
