@@ -40,9 +40,6 @@ N_mol, max_size, X = qmlspectrum.qml_fchl_rep(geom_path, read_X, file_X, cut_dis
 #=== Bin spectra for all molecules
 lam,Int_lam=qmlspectrum.bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_max, N_bin)
 
-for i_mol in range(N_mol):
-    Int_lam[i_mol,:]=Int_lam[i_mol,:]/np.sum(Int_lam[i_mol,:])
-
 #=== Shuffle
 indices=qmlspectrum.shuffle(load_indices, file_indices, N_mol)
 
@@ -62,12 +59,16 @@ alpha=qmlspectrum.linalg_solve(N_bin,K,P,'train_spec_00100.txt','coeffs_00100.tx
 iquery=0
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
 Int_TDDFT=Int_lam[indices[iquery],:]
+Int_pred=Int_pred/np.sum(Int_pred)
+Int_TDDFT=Int_TDDFT/np.sum(Int_TDDFT)
 phi=qmlspectrum.confidence_score(Int_pred, Int_TDDFT)
 print('Confidence score for entry ', iquery,'= ',phi, ' %')
 
 iquery=5000
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
 Int_TDDFT=Int_lam[indices[iquery],:]
+Int_pred=Int_pred/np.sum(Int_pred)
+Int_TDDFT=Int_TDDFT/np.sum(Int_TDDFT)
 phi=qmlspectrum.confidence_score(Int_pred, Int_TDDFT)
 print('Confidence score for entry ', iquery,'= ',phi, ' %')
 
