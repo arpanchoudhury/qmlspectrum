@@ -47,3 +47,5 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
         print('data saved in ', file_P)
 
     return lam, Int_lam
+
+# Code for non uniform binning will be kept here.
