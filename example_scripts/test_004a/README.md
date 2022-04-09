@@ -3,8 +3,6 @@ Same as `test_003a` but we will predict the spectrum of 100 out-of-sample molecu
 For the shuffles considered we get the following results.
 
 ```
-Max. number of atoms in the dataset is  23
-Loading FCHL representation from  FCHL_UFF.npy
 Confidence score for entry  100 =  75.53485355225791  %
 Confidence score for entry  101 =  74.91568388269518  %
 Confidence score for entry  102 =  76.57958980534225  %
