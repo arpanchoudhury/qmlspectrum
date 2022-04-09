@@ -1,8 +1,3 @@
-Same as `test_003a` but we will predict the spectrum of 100 out-of-sample molecules, calculate the confidence score for prediction, and also find the mean confidence score for out-of-sample prediction. 
-
-For the shuffles considered we get the following results.
-
-```
 Max. number of atoms in the dataset is  23
 Loading FCHL representation from  FCHL_UFF.npy
 Confidence score for entry  100 =  75.53485355225791  %
@@ -106,4 +101,3 @@ Confidence score for entry  197 =  73.99146544317135  %
 Confidence score for entry  198 =  73.05732329215604  %
 Confidence score for entry  199 =  69.25141169328366  %
 Mean of confidence scores for out of sample entries between 100 and 200 is 68.8880911948835  %
-```
