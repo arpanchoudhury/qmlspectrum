@@ -30,6 +30,6 @@ For the out-of-sample molecule (`iquery=5000`, index=5000 after shuffling) it tu
 In one instance of shuffling, these were the scores obtained
 
 ```
-Confidence score for entry  0 =  98.99813417950418  %
-Confidence score for entry  5000 =  74.20354724832409  %
+Confidence score for entry  0 =  99.84549621136395  %
+Confidence score for entry  5000 =  75.13029926552382  %
 ```
