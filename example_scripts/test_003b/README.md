@@ -23,6 +23,6 @@ We will divide the oscillator strengths by the sum over all bins
 The resulting confidence scores are very similar to values from `test_003a`
 
 ```
-Confidence score for entry  0 =  99.0216915151149  %
-Confidence score for entry  5000 =  73.93701467824154  %
+Confidence score for entry  0 =  99.85788204960068  %
+Confidence score for entry  5000 =  75.78793839877247  %
 ```
