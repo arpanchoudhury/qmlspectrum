@@ -28,7 +28,7 @@ read_P=False            # If true, binned properties will be loaded from 'file_P
 file_P='def2SVP_spec_128bins.npy'
 
 # Shuffling
-load_indices=True
+load_indices=False
 file_indices='shuffle_index.dat'
 
 #=== End of General Inputs
