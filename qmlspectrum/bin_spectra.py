@@ -102,4 +102,4 @@ def bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength
         np.save(file_P, Int_lam)
         print('data saved in ', file_P)
 
-    return Int_lam, lambda_min, dlambda
+    return Int_lam, lambda_min, dlambda, N_bin
