@@ -27,17 +27,15 @@ wavelength_max=800.0
 wavelength_min=200.0
 
 # Options to load data
-read_X=False            # If true, descriptors will be loaded from 'file_X', if false will be calculated and stored in this file
-file_X='FCHL_GAFF_MD.npy'
+read_X=True            # If true, descriptors will be loaded from 'file_X', if false will be calculated and stored in this file
+file_X='FCHL_GAFF_MD_DKI_0100.npy'
 
-
-read_P=False            # If true, binned properties will be loaded from 'file_P', if false will be calculated and stored in this file
-file_P='CAMB3LYP_631Gs_0.5spec_den.npy'
+read_P=True            # If true, binned properties will be loaded from 'file_P', if false will be calculated and stored in this file
+file_P='CAMB3LYP_631Gs_0.5spec_den_DKI.npy'
 
 # Shuffling
-shuffling = False       # If True, random shuffling will be done for training, if False, no shuffling.
-load_indices=False
-file_indices='index.dat'
+load_indices=True
+file_indices='shuffle_index.dat'
 
 #=== End of General Inputs
 
@@ -47,40 +45,26 @@ N_mol, max_size, X = qmlspectrum.qml_fchl_rep(geom_path, read_X, file_X, cut_dis
 #=== Bin spectra for all molecules
 Int_lam, lambda_min, dlambda, N_bin=qmlspectrum.bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength_max, N_train, spec_den, N_state)
 
-
 #=== Shuffle
-indices=qmlspectrum.shuffle(shuffling, load_indices, file_indices, N_mol)
+indices=qmlspectrum.shuffle(load_indices, file_indices, N_mol)
 
 #=== Training
 # Generate the kernel matrix, and collect property of training molecules
-#N_train=100
-load_K=False
-file_kernel='Kernel_00100.dat.npy'
+load_K=True
+file_kernel='_Kernel_FCHL_GAFF_MD_DKI_0100.dat.npy'
 
 K,P = qmlspectrum.prepare_trainingdata(N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance,max_size)
 
 # solve KRR equations
-alpha=qmlspectrum.linalg_solve(N_bin,K,P,'train_spec_00100.txt','coeffs_00100.txt')
-#=== prediction
+alpha=qmlspectrum.linalg_solve(N_bin,K,P)
 
-iquery=10 
+#=== prediction
+iquery=100 
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
 
-Int_TDDFT=Int_lam[indices[iquery],:]
-
-# Plot a TDDFT stick spectrum along with a smooth ML predicted spectrum
-label1='TDDFT'
-label2='FCHL-ML-predicted ($N_{train}$='+ str(N_train) +')'
-label=[label1, label2]
-qmlspectrum.plot_stem_smooth(lambda_min,Int_TDDFT,Int_pred,label,'spectrum_ML_TDDFT.png')
-
+Int_TDDFT=Int_lam[iquery,:]
 
 #=== Other options for plotting
 # Plot a bar spectrum with varying bin width
-# qmlspectrum.plot_bar(lambda_min,Int_TDDFT,dlambda,'TDDFT','bar_TDDFT.png')
-
-# Plot a smooth spectrum
-# qmlspectrum.plot_smooth(lam,Int_TDDFT,'TDDFT','spectrum_TDDFT_smooth.png')
-# print(lambda_min)
-# print(Int_TDDFT)
+qmlspectrum.plot_bar_compare(lambda_min,Int_pred, Int_TDDFT,dlambda,['ML', 'TDDFT'],'compare_ML_TDDFT.png')
 
