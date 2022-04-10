@@ -46,12 +46,12 @@ N_mol, max_size, X = qmlspectrum.qml_fchl_rep(geom_path, read_X, file_X, cut_dis
 Int_lam, lambda_min, dlambda, N_bin=qmlspectrum.bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength_max, N_train, spec_den, N_state)
 
 #=== Shuffle
-indices=qmlspectrum.shuffle(load_indices, file_indices, N_mol)
+indices=qmlspectrum.shuffle(False, load_indices, file_indices, N_mol)
 
 #=== Training
 # Generate the kernel matrix, and collect property of training molecules
 load_K=True
-file_kernel='_Kernel_FCHL_GAFF_MD_DKI_0100.dat.npy'
+file_kernel='Kernel_FCHL_GAFF_MD_DKI_0100.dat.npy'
 
 K,P = qmlspectrum.prepare_trainingdata(N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance,max_size)
 
@@ -61,10 +61,16 @@ alpha=qmlspectrum.linalg_solve(N_bin,K,P)
 #=== prediction
 iquery=100 
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
-
 Int_TDDFT=Int_lam[iquery,:]
+
+f=open('Int.dat','w')
+for i in range(N_bin):
+    f.write(str(lambda_min[i])+' '+str(dlambda[i])+' '+str(Int_pred[i])+ ' ' +str(Int_TDDFT[i])+'\n')
+f.close()
+
 
 #=== Other options for plotting
 # Plot a bar spectrum with varying bin width
 qmlspectrum.plot_bar_compare(lambda_min,Int_pred, Int_TDDFT,dlambda,['ML', 'TDDFT'],'compare_ML_TDDFT.png')
 
+# Additional post-processing of the plot can be done in plot.ipynb
