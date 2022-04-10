@@ -74,9 +74,9 @@ This test-suite is developed by Raghunathan Ramakrishnan and maintained at [http
 
 ## Contributions from
 
+* Arpan Choudhury 
 * Prakriti Kayastha    
-* Sabyasachi Chakraborty     
-* Arpan Choudhury     
+* Sabyasachi Chakraborty         
 * Debashree Ghosh   
 
 
