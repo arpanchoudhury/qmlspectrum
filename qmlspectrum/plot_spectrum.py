@@ -44,4 +44,13 @@ def plot_stem_smooth(lam,Int1,Int2,label,filename):
     plt.clf()
     return 1
 
+def plot_bar(lambda_min, Int, dlambda, label, filename):
+    plt.bar(lambda_min, Int, width = dlambda, label=label, color='red', alpha=0.7, align='edge')
+    plt.legend()
+    plt.xlabel('Wavelength (nm)', fontsize = 15)
+    plt.ylabel('Oscillator strength (au)', fontsize = 15)
+    plt.savefig(filename,bbox_inches='tight')
+    plt.clf()
+    return 1
+
 
