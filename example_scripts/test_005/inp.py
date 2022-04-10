@@ -1,12 +1,13 @@
 import qmlspectrum
+import numpy as np
 
 #== Inputs
 
 # Geometry, geom_path contains xyz files named as 000001.xyz and so on
-geom_path='/mnt/c/Users/Arpan Choudhury/Desktop/melanin_DKI-binning/qmlspectrum-main/datasets/dataset_bigQM7w/bigQM7w_UFF_geoms'
+geom_path='/Users/raghurama/repos/qmlspectrum/datasets/dataset_melanin/DKI_geom'
 
 # Spectra, spec_path contains csv files with wavelength (nm) and oscillator strength named as 000001.csv and so on
-spec_path='/mnt/c/Users/Arpan Choudhury/Desktop/melanin_DKI-binning/qmlspectrum-main/datasets/dataset_bigQM7w/bigQM7w_wB97XD_def2SVPD_spectra'
+spec_path='/Users/raghurama/repos/qmlspectrum/datasets/dataset_melanin/DKI_spectra'
 
 # FCHL settings
 sigmas=[5]
@@ -29,8 +30,8 @@ wavelength_min=200.0
 read_X=False            # If true, descriptors will be loaded from 'file_X', if false will be calculated and stored in this file
 file_X='FCHL_UFF.npy'
 
-read_P=False            # If true, binned properties will be loaded from 'file_P', if false will be calculated and stored in this file
 '''
+read_P=False            # If true, binned properties will be loaded from 'file_P', if false will be calculated and stored in this file
 file_P='CAMB3LYP_631Gs_0.5spec_den.npy'
 '''
 # Shuffling
@@ -43,8 +44,7 @@ file_indices='shuffle_index.dat'
 N_mol, max_size, X = qmlspectrum.qml_fchl_rep(geom_path, read_X, file_X, cut_distance)
 '''
 #=== Bin spectra for all molecules
-lambda_min,lam,Int_lam,dlambda=qmlspectrum.bin_spectra_nonuniform(spec_path, file_P, wavelength_min, wavelength_max, N_train, spec_den, N_state)
-
+Int_lam, lambda_min, dlambda=qmlspectrum.bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength_max, N_train, spec_den, N_state)
 
 '''
 #=== Shuffle
@@ -75,9 +75,6 @@ qmlspectrum.plot_stem_smooth(lam,Int_TDDFT,Int_pred,label,'spectrum_ML_TDDFT.png
 '''
 
 #=== Other options for plotting
-# Plot a stick spectrum
-qmlspectrum.plot_stem(lam,Int_TDDFT,'TDDFT','stick_TDDFT.png')
-
 # Plot a bar spectrum with varying bin width
 qmlspectrum.plot_bar(lambda_min,Int_TDDFT,dlambda,'TDDFT','bar_TDDFT.png')
 
