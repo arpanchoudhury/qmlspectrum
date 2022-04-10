@@ -6,6 +6,7 @@ from .qml_utils import max_size
 from .linalg_solve import linalg_solve
 from .plot_spectrum import plot_stem
 from .plot_spectrum import plot_bar
+from .plot_spectrum import plot_bar_compare
 from .plot_spectrum import plot_smooth
 from .plot_spectrum import plot_stem_smooth
 from .predict import predict

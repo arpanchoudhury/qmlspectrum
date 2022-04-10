@@ -53,4 +53,16 @@ def plot_bar(lambda_min, Int, dlambda, label, filename):
     plt.clf()
     return 1
 
+def plot_bar_compare(lambda_min, Int1, Int2, dlambda, label, filename):
+    label1=label[0]
+    label2=label[1]
+    plt.bar(lambda_min, Int1, width = dlambda, label=label1, color='red', alpha=0.2, align='edge')
+    plt.bar(lambda_min, Int2, width = dlambda, label=label2, color='red', alpha=1.0, align='edge', fill=False)
+    plt.legend()
+    plt.xlabel('Wavelength (nm)', fontsize = 15)
+    plt.ylabel('Oscillator strength (au)', fontsize = 15)
+    plt.savefig(filename,bbox_inches='tight')
+    plt.clf()
+    return 1
+
 
