@@ -19,7 +19,7 @@ lamd=1e-4              # Regularization strength, lambda
 # Binning
 ########
 N_train=100 # N_train must be defined before binning part
-spec_den=5.0
+spec_den=2.0
 N_state=50
 
 ########
@@ -31,7 +31,7 @@ read_X=True            # If true, descriptors will be loaded from 'file_X', if f
 file_X='FCHL_GAFF_MD_DKI.npy'
 
 read_P=False            # If true, binned properties will be loaded from 'file_P', if false will be calculated and stored in this file
-file_P='CAMB3LYP_631Gs_5.0spec_den_DKI.npy'
+file_P='CAMB3LYP_631Gs_2.0spec_den_DKI.npy'
 
 # Shuffling
 load_indices=True
