@@ -22,8 +22,8 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
         lambda_max=[]
         dlambda = (wavelength_max - wavelength_min)/N_bin
         for i_bin in range(N_bin):
-            lambda_min.append( (i_bin)*dlambda )
-            lambda_max.append( (i_bin+1)*dlambda )
+            lambda_min.append( wavelength_min + (i_bin)*dlambda )
+            lambda_max.append( wavelength_min + (i_bin+1)*dlambda )
 
         N_file=len(spec_files)
         i_file=0
