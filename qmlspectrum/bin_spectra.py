@@ -60,6 +60,7 @@ def bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength
         Int_lam=bin_spectra[1:N_file,:]
         lambda_min=bin_spectra[N_file,:]
         dlambda=bin_spectra[N_file+1,:]
+        N_bin = len(Int_lam[0])
     else:
         print('binning spectra')
 
