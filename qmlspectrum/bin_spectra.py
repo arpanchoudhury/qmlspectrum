@@ -73,6 +73,8 @@ def bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength
         # to bin uniformly. 
 
         N_bin = int(N_state/spec_den)
+        print (spec_path, read_P, file_P, wavelength_min, wavelength_max, N_train, spec_den, N_state)
+        print (N_bin)
 
         all_wavelength = []
         for i in range(N_train):
@@ -82,14 +84,16 @@ def bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength
 
         all_wavelength = pd.DataFrame(all_wavelength, columns=['wavelength_nm'])
         all_wavelength['bins'], bins = pd.qcut(all_wavelength['wavelength_nm'], q=N_bin, retbins=True, precision=6)
-       
+
         lambda_min = []
         lambda_max = []
         dlambda = []
-        for i in range(N_bin-1):
+        print(bins)
+        for i in range(N_bin):
             lambda_min.append(bins[i])
             lambda_max.append(bins[i+1])
             dlambda.append( bins[i + 1] - bins[i] )
+            print(i, bins[i],bins[i+1])
 
         N_file=len(spec_files)
         i_file=0
