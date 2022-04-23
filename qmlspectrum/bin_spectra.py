@@ -53,7 +53,6 @@ def bin_spectra_nonuniform(spec_path, indices, read_P, file_P, wavelength_min, w
     A function for binning spectra using non-uniform bin widths
     '''
     spec_files = qmlspectrum.read_files(spec_path)
-    print(spec_files)
     if read_P:
         bin_spectra=np.load(file_P)
         N_file=bin_spectra.shape[0]-2
