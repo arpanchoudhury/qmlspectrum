@@ -12,7 +12,7 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
     if read_P:
         bin_spectra=np.load(file_P)
         N_file=bin_spectra.shape[0]-2
-        Int_lam=bin_spectra[1:N_file,:]
+        Int_lam=bin_spectra[1:N_file,:]         # shouldn't this be Int_lam=bin_spectra[0:N_file,:] ???
         lambda_min=bin_spectra[N_file,:]
         dlambda=bin_spectra[N_file+1,:]
     else:
@@ -48,19 +48,19 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
 
     return Int_lam, lambda_min, dlambda
 
-def bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength_max, N_train, spec_den, N_state):
+def bin_spectra_nonuniform(spec_path, indices, read_P, file_P, wavelength_min, wavelength_max, N_train, N_bin):
     '''
     A function for binning spectra using non-uniform bin widths
     '''
     spec_files = qmlspectrum.read_files(spec_path)
+    print(spec_files)
     if read_P:
         bin_spectra=np.load(file_P)
         N_file=bin_spectra.shape[0]-2
         N_bin=bin_spectra.shape[1]
-        Int_lam=bin_spectra[1:N_file,:]
+        Int_lam=bin_spectra[1:N_file,:]     # shouldn't this be Int_lam=bin_spectra[0:N_file,:] ???
         lambda_min=bin_spectra[N_file,:]
         dlambda=bin_spectra[N_file+1,:]
-        N_bin = len(Int_lam[0])
     else:
         print('binning spectra')
 
@@ -72,18 +72,25 @@ def bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength
         # There may be cases when different molecules can have different number of states and we may want
         # to bin uniformly. 
 
-        N_bin = int(N_state/spec_den)
-        print (spec_path, read_P, file_P, wavelength_min, wavelength_max, N_train, spec_den, N_state)
-        print (N_bin)
+        print (spec_path, read_P, file_P, wavelength_min, wavelength_max, N_train, N_bin)
 
         all_wavelength = []
-        for i in range(N_train):
-            spec_data = pd.read_csv(spec_path+'/'+spec_files[i], names=['wavelength_nm', 'osc_strength'])
-            wavelength = spec_data['wavelength_nm'].tolist()
+        for itrain in range(N_train):
+            train_data = pd.read_csv(spec_path+'/'+"%06d"%(indices[itrain]+1)+'.csv', names=['wavelength_nm', 'osc_strength'])
+            wavelength = train_data['wavelength_nm'].tolist()
             all_wavelength = all_wavelength + wavelength
 
-        all_wavelength = pd.DataFrame(all_wavelength, columns=['wavelength_nm'])
-        all_wavelength['bins'], bins = pd.qcut(all_wavelength['wavelength_nm'], q=N_bin, retbins=True, precision=6)
+        sorted_wavelength = []
+        for wavelength in all_wavelength:
+            if (wavelength_min <= wavelength <= wavelength_max):
+                sorted_wavelength.append(wavelength)
+
+        sorted_wavelength = pd.DataFrame(sorted_wavelength, columns=['wavelength_nm'])
+        sorted_wavelength['bins'], bins = pd.qcut(sorted_wavelength['wavelength_nm'], q=N_bin, retbins=True, precision=6)
+        counts = sorted_wavelength['bins'].value_counts(sort=False)
+        avg_count = counts/N_train
+        spec_den = sum(avg_count.values)/N_bin  # Average no. of states per bin per molecule 
+        print('Spectral density (i.e. average no. of states per bin per molecule) = ', spec_den)
 
         lambda_min = []
         lambda_max = []
@@ -116,4 +123,4 @@ def bin_spectra_nonuniform(spec_path, read_P, file_P, wavelength_min, wavelength
         np.save(file_P, Int_lam)
         print('data saved in ', file_P)
 
-    return Int_lam, lambda_min, dlambda, N_bin
+    return Int_lam, lambda_min, dlambda
