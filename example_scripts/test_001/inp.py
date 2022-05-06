@@ -3,10 +3,10 @@ import qmlspectrum
 #== Inputs
 
 # Geometry, geom_path contains xyz files named as 000001.xyz and so on
-geom_path='/Users/raghurama/repos/qmlspectrum/datasets/dataset_bigQM7w/bigQM7w_UFF_geoms'
+geom_path='/home/rr/qmlspectrum_test/datasets/dataset_bigQM7w/bigQM7w_UFF_geoms'
 
 # Spectra, spec_path contains csv files with wavelength (nm) and oscillator strength named as 000001.csv and so on
-spec_path='/Users/raghurama/repos/qmlspectrum/datasets/dataset_bigQM7w/bigQM7w_wB97XD_def2SVPD_spectra'
+spec_path='/home/rr/qmlspectrum_test/datasets/dataset_bigQM7w/bigQM7w_wB97XD_def2SVPD_spectra'
 
 # FCHL settings
 sigmas=[5]
@@ -21,14 +21,14 @@ wavelength_max=120.0
 wavelength_min=0.0
 
 # Options to load data
-read_X=False            # If true, descriptors will be loaded from 'file_X', if false will be calculated and stored in this file
+read_X=True            # If true, descriptors will be loaded from 'file_X', if false will be calculated and stored in this file
 file_X='FCHL_UFF.npy'
 
 read_P=True            # If true, binned properties will be loaded from 'file_P', if false will be calculated and stored in this file
 file_P='def2SVP_spec_128bins.npy'
 
 # Shuffling
-load_indices=False
+load_indices=True
 file_indices='shuffle_index.dat'
 
 #=== End of General Inputs
@@ -45,7 +45,7 @@ indices=qmlspectrum.shuffle(load_indices, file_indices, N_mol)
 #=== Training
 # Generate the kernel matrix, and collect property of training molecules
 N_train=100
-load_K=False
+load_K=True
 file_kernel='Kernel_00100.dat.npy'
 
 K,P = qmlspectrum.prepare_trainingdata(N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance,max_size)
@@ -58,7 +58,7 @@ alpha=qmlspectrum.linalg_solve(N_bin,K,P,'train_spec_00100.txt','coeffs_00100.tx
 iquery=0 #6406
 Int_pred=qmlspectrum.predict(X,alpha,indices,iquery,max_size,sigmas,cut_distance)
 
-Int_TDDFT=Int_lam[indices[iquery],:]
+Int_TDDFT=Int_lam[indices[iquery]-1,:]
 
 # Plot a TDDFT stick spectrum along with a smooth ML predicted spectrum
 label1='TDDFT'
