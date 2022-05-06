@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 HERE = pathlib.Path(__file__).parent
 
 PACKAGE_NAME = 'qmlspectrum'
-VERSION = '22.04.11'
+VERSION = '22.04.13'
 AUTHOR = 'Raghunathan Ramakrishnan'
 AUTHOR_EMAIL = 'raghu.rama.chem@gmail.com'
 URL = 'https://github.com/raghurama123/qmlspectrum'
