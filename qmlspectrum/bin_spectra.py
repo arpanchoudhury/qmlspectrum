@@ -12,7 +12,7 @@ def bin_spectra_uniform(spec_path, read_P, file_P, wavelength_min, wavelength_ma
     if read_P:
         bin_spectra=np.load(file_P)
         N_file=bin_spectra.shape[0]-2
-        Int_lam=bin_spectra[1:N_file,:]         # shouldn't this be Int_lam=bin_spectra[0:N_file,:] ???
+        Int_lam=bin_spectra[0:N_file,:]         # shouldn't this be Int_lam=bin_spectra[0:N_file,:] ???, fixed 06 May 2022
         lambda_min=bin_spectra[N_file,:]
         dlambda=bin_spectra[N_file+1,:]
     else:
@@ -57,7 +57,7 @@ def bin_spectra_nonuniform(spec_path, indices, read_P, file_P, wavelength_min, w
         bin_spectra=np.load(file_P)
         N_file=bin_spectra.shape[0]-2
         N_bin=bin_spectra.shape[1]
-        Int_lam=bin_spectra[1:N_file,:]     # shouldn't this be Int_lam=bin_spectra[0:N_file,:] ???
+        Int_lam=bin_spectra[0:N_file,:]     # shouldn't this be Int_lam=bin_spectra[0:N_file,:] ???, fixed 06 May 2022
         lambda_min=bin_spectra[N_file,:]
         dlambda=bin_spectra[N_file+1,:]
     else:
