@@ -43,12 +43,11 @@ pip3 install qmlspectrum --user
 If you are using the program and the bigQM7ω dataset distributed here, please consider citing the following references.
 
 #### 1. bigQM7ω dataset and full-spectrum modeling
-[_Quantum Machine Learning Transition Probabilities in Electronic Excitation Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma_](https://arxiv.org/abs/2110.11798)                
+[_Resolution-vs.-Accuracy Dilemma in Machine Learning Modeling of Electronic Excitation Spectra_](https://arxiv.org/abs/2110.11798)                
 Prakriti Kayastha, Sabyasachi Chakraborty, Raghunathan Ramakrishnan (2022)     
 ```
-@article{kayastha2022quantum,
-  title={Quantum Machine Learning Transition Probabilities in Electronic Excitation 
-  Spectra across Chemical Space: The Resolution-vs.-Accuracy Dilemma},
+@article{kayastha2022resolution,
+  title={Resolution-vs.-Accuracy Dilemma in Machine Learning Modeling of Electronic Excitation Spectra},
   author={Kayastha, Prakriti and Chakraborty, Sabyasachi and Ramakrishnan, Raghunathan},
   journal={arXiv preprint arXiv:2110.11798},
   url={https://doi.org/10.48550/arXiv.2110.11798},
