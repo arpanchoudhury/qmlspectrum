@@ -2,6 +2,7 @@ from .read_files import read_files
 from .bin_spectra import bin_spectra_uniform
 from .bin_spectra import bin_spectra_nonuniform
 from .qml_representation import qml_fchl_rep
+from .qml_representation import qml_slatm_rep
 from .qml_utils import max_size
 from .linalg_solve import linalg_solve
 from .plot_spectrum import plot_stem
@@ -11,6 +12,7 @@ from .plot_spectrum import plot_smooth
 from .plot_spectrum import plot_stem_smooth
 from .predict import predict
 from .shuffle import shuffle
+from .prepare_trainingdata import single_kernel_sigma
 from .prepare_trainingdata import prepare_trainingdata
 from .prepare_trainingdata import prepare_trainingdata_batch
 from .scores import confidence_score
