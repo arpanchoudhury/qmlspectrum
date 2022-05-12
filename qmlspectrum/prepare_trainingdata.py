@@ -3,7 +3,35 @@ import qml
 from qml.kernels import laplacian_kernel, gaussian_kernel
 
 
-def prepare_trainingdata(descriptor,N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,cut_distance,max_size):
+
+def single_kernel_sigma(N_sample, X, indices, kernel, typ):
+
+
+    D = np.zeros([N_sample,N_sample],dtype=float)
+
+    for i in range(N_sample):
+        for j in range(N_sample):
+            D[i,j] = np.sum(np.abs(X[indices[i]] - X[indices[j]]))
+
+    Dmax = np.max(D)
+    Dmedian = np.median(D)
+
+    if kernel == 'laplacian':
+        if typ == 'max':
+            opt_sigma = Dmax/(np.log(2.0))
+        elif typ == 'median':
+            opt_sigma = Dmedian/(np.log(2.0))
+    elif kernel == 'gaussian':
+        if typ == 'max':
+            opt_sigma = Dmax/np.sqrt(2.0*(np.log(2.0)))
+        elif typ == 'median':
+            opt_sigma = Dmedian/np.sqrt(2.0*(np.log(2.0)))
+
+    return opt_sigma
+
+
+
+def prepare_trainingdata(descriptor,N_train,load_K,file_kernel,indices,lamd,X,Int_lam,sigmas,opt_sigma,cut_distance,max_size):
 
 
     N_bin=len(Int_lam[0])
@@ -31,7 +59,7 @@ def prepare_trainingdata(descriptor,N_train,load_K,file_kernel,indices,lamd,X,In
                     K[jtrain,itrain]=K[itrain,jtrain]
             np.save(file_kernel, K)
 
-    if descriptor == 'SLATM':
+    elif descriptor == 'SLATM':
         if load_K:
             K = np.load(file_kernel)
         else:
@@ -47,7 +75,7 @@ def prepare_trainingdata(descriptor,N_train,load_K,file_kernel,indices,lamd,X,In
                     Yq=np.zeros([1,len(Xq)],dtype=float)
                     Yt[0]=Xt
                     Yq[0]=Xq
-                    tmp=laplacian_kernel(Yq,Yt, sigma=100)
+                    tmp=laplacian_kernel(Yq,Yt, sigma=opt_sigma)
                     K[itrain,jtrain]=tmp[0,0]
                     K[jtrain,itrain]=K[itrain,jtrain]
             np.save(file_kernel, K)
