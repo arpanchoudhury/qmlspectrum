@@ -7,11 +7,20 @@ from qml.kernels import laplacian_kernel, gaussian_kernel
 def single_kernel_sigma(N_sample, X, indices, kernel, typ):
 
 
-    D = np.zeros([N_sample,N_sample],dtype=float)
+    
+    #D = np.zeros([N_sample,N_sample],dtype=float)
 
-    for i in range(N_sample):
-        for j in range(N_sample):
-            D[i,j] = np.sum(np.abs(X[indices[i]] - X[indices[j]]))
+    #for i in range(N_sample):
+    #    for j in range(N_sample):
+    #        D[i,j] = np.sum(np.abs(X[indices[i]] - X[indices[j]]))
+            
+    D = []
+    for i in range(0,N_sample-1):
+        for j in range(i+1,N_sample):
+            Dij = np.sum(np.abs(X[indices[i]] - X[indices[j]]))
+            D.append(Dij)
+            
+    D=np.array(D,dtype=float)
 
     Dmax = np.max(D)
     Dmedian = np.median(D)
