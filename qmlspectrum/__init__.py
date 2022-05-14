@@ -4,6 +4,7 @@ from .bin_spectra import bin_spectra_nonuniform
 from .qml_representation import qml_fchl_rep
 from .qml_representation import qml_slatm_rep
 from .qml_utils import max_size
+from .ensemble_average import ensemble_average
 from .linalg_solve import linalg_solve
 from .plot_spectrum import plot_stem
 from .plot_spectrum import plot_bar
